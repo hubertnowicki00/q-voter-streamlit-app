@@ -1,6 +1,12 @@
 # Interactive q-Voter Model Simulation for Customer Churn
 
-## 1. Project Description
+## 1. STREAMLIT APP LINK
+
+https://q-voter-app-app-5v98pd4sdjhgey79rnzspj.streamlit.app/
+https://q-voter-app-app-5v98pd4sdjhgey79rnzspj.streamlit.app/
+https://q-voter-app-app-5v98pd4sdjhgey79rnzspj.streamlit.app/
+
+## 2. Project Description
 
 This project presents an interactive web application designed to simulate and visualize customer churn dynamics. It uses an Agent-Based Modeling (ABM) approach via a modified **q-voter model** mapped onto a **Watts-Strogatz small-world network**. 
 
@@ -13,7 +19,7 @@ The project features:
 - Network generation and topological adjustments (NetworkX).
 - Real-time calculations of Mean and 95% Confidence Intervals for churn rates.
 
-## 2. Model & Theoretical Background
+## 3. Model & Theoretical Background
 
 Instead of a static dataset, this project generates complex dynamic data based on theoretical socio-physics and marketing research.
 
@@ -23,7 +29,7 @@ Instead of a static dataset, this project generates complex dynamic data based o
   - If opinions differ, the agent acts independently and may "flip" based on their personal baseline sensitivity.
 - **Advertising Impact:** Based on literature regarding online ad campaigns, episodic ads impact a random subset of agents (5-20% success rate). Exposure to a successful ad dynamically alters an agent's flipping threshold, making them harder to churn or easier to win back.
 
-## 3. Tech Stack and Methodology
+## 4. Tech Stack and Methodology
 
 ### Tech Stack
 
@@ -47,7 +53,7 @@ The workflow follows these main steps:
 6. **Metrics Aggregation:** Calculating the mean churn rate and empirical 95% Confidence Intervals (2.5th and 97.5th percentiles) across all parallel runs.
 7. **Interactive Visualization:** Rendering the aggregated data back to the user via Streamlit.
 
-## 4. Repository Contents
+## 5. Repository Contents
 
 ```text
 ├── app.py                  # Main Streamlit application
