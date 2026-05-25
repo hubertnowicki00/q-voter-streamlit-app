@@ -1,0 +1,25 @@
+name: Wake Streamlit App
+on:
+  schedule:
+    - cron: "0 */4 * * *"
+  workflow_dispatch:
+
+jobs:
+  wake-up:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.10"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run wake-up script
+        run: python wake_app.py
+        env:
+          STREAMLIT_APP_URL: "https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/"
