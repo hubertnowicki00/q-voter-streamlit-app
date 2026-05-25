@@ -3,3 +3,5 @@ numpy
 matplotlib
 networkx
 numba
+selenium
+webdriver-manager
