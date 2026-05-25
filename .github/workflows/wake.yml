@@ -1,27 +1,12 @@
-name: Wake Streamlit App
+name: Keep App Alive
 on:
   schedule:
-    - cron: "0 */4 * * *"
+    - cron: "0 */3 * * *" # Runs every 3 hours
   workflow_dispatch:
 
 jobs:
-  wake-up:
+  ping:
     runs-on: ubuntu-latest
-    env:
-      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12.10"
-
-      - name: Install dependencies
-        run: pip install -r requirements.txt
-
-      - name: Run wake-up script
-        run: python wake_app.py
-        env:
-          STREAMLIT_APP_URL: "https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/"
+      - name: Ping the app
+        run: curl -I https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/
