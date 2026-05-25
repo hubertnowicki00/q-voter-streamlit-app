@@ -2,11 +2,11 @@
 
 ## 1. STREAMLIT APP LINK
 
-https://q-voter-app-app-5v98pd4sdjhgey79rnzspj.streamlit.app/
+https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/
 
-https://q-voter-app-app-5v98pd4sdjhgey79rnzspj.streamlit.app/
+https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/
 
-https://q-voter-app-app-5v98pd4sdjhgey79rnzspj.streamlit.app/
+https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/
 
 ## 2. Project Description
 
