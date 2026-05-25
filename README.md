@@ -61,4 +61,6 @@ The workflow follows these main steps:
 ├── app.py                  # Main Streamlit application
 ├── requirements.txt        # Python dependencies
 ├── q-voter_projekt.ipynb   # Original exploratory Jupyter Notebook
+├── wakeup.py               # Script for keeping the streamlit app alive
+├── .github/workflows       # Workflow for keeping the streamlit app alive
 └── README.md               # Project documentation
