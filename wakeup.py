@@ -2,6 +2,7 @@
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -16,10 +17,11 @@ chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
 chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--window-size=1920,1080")
 chrome_options.add_argument("--remote-debugging-port=922")
-driver = webdriver.Chrome(options=chrome_options)
 try:
-    driver = webdriver.Chrome(options=chrome_options)
+    service = Service(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=service, options=chrome_options)
     driver.get(url)
     wait = WebDriverWait(driver, 15)
     button_xpath = "//button[contains(text(), 'Get the app back')]"
@@ -33,5 +35,5 @@ except Exception as e:
 finally:
     try:
         driver.quit()
-    except NameError:
+    except Exception:
         pass
