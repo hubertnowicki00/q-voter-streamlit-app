@@ -1,12 +1,19 @@
 name: Keep App Alive
 on:
   schedule:
-    - cron: "0 */3 * * *" # Runs every 3 hours
+    - cron: "0 */4 * * *"  # Runs every 4 hours
   workflow_dispatch:
-
 jobs:
-  ping:
+  wake-up:
     runs-on: ubuntu-latest
     steps:
-      - name: Ping the app
-        run: curl -I https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12.10"
+      - name: Install Selenium
+        run: pip install selenium
+      - name: Run Selenium wake script
+        run: python wakeup.py
