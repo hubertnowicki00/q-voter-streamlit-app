@@ -11,7 +11,7 @@ def run():
         page = browser.new_page()
         page.goto(url)
         try:
-            button = page.get_by_role("button", name="Get the app back")
+            button = page.get_by_role("button", name="Yes, get this app back up!")
             button.wait_for(state="visible", timeout=15000)
             button.click()
             time.sleep(5) 
