@@ -19,5 +19,6 @@ jobs:
         run: |
           pip install playwright
           playwright install chromium
+          playwright install-deps
       - name: Run Playwright wake script
         run: python wakeup.py
