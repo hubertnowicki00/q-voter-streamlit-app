@@ -15,7 +15,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.10"
-      - name: Install dependencies
-        run: pip install selenium webdriver-manager
+      - name: Install System Chromium
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y chromium-browser chromium-chromedriver
+      - name: Install Selenium
+        run: pip install selenium
       - name: Run Selenium wake script
         run: python wakeup.py
