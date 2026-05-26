@@ -10,6 +10,8 @@ from selenium.common.exceptions import TimeoutException
 import os
 import time
 
+import traceback
+
 url = os.getenv("STREAMLIT_APP_URL", "https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/")
 
 chrome_options = Options()
@@ -31,7 +33,10 @@ try:
 except TimeoutException:
     print("Error 1 - app awake")
 except Exception as e:
-    print("Error 2 - browser fail")
+    print(f"\n Error 2 - browser fail : {type(e).__name__} - {str(e)}")
+    print("Error log \n")
+    traceback.print_exc()
+    print("\n END")
 finally:
     try:
         driver.quit()
