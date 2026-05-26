@@ -12,21 +12,26 @@ import time
 url = os.getenv("STREAMLIT_APP_URL", "https://q-voter-app-app-54xgh5gxxrr4pukoxwfmwe.streamlit.app/")
 
 chrome_options = Options()
-chrome_options.add_argument("--headless")
+chrome_options.add_argument("--headless=new")
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
+chrome_options.add_argument("--disable-gpu")
+chrome_options.add_argument("--remote-debugging-port=922")
 driver = webdriver.Chrome(options=chrome_options)
-driver.get(url)
 try:
+    driver = webdriver.Chrome(options=chrome_options)
+    driver.get(url)
     wait = WebDriverWait(driver, 15)
     button_xpath = "//button[contains(text(), 'Get the app back')]"
     button = wait.until(EC.element_to_be_clickable((By.XPATH, button_xpath)))
     button.click()
     time.sleep(10)
 except TimeoutException:
-    print("Error")
+    print("Error 1 - app awake")
 except Exception as e:
-    print("Error")
+    print("Error 2 - browser fail")
 finally:
-    driver.quit()
-    
+    try:
+        driver.quit()
+    except NameError:
+        pass
