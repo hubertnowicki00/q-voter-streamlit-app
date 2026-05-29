@@ -63,4 +63,5 @@ The workflow follows these main steps:
 ├── q-voter_projekt.ipynb   # Original exploratory Jupyter Notebook
 ├── wakeup.py               # Script for keeping the streamlit app alive
 ├── .github/workflows       # Workflow for keeping the streamlit app alive
+├── full_report.pdf         # Full report on the project and conducted experiments
 └── README.md               # Project documentation
